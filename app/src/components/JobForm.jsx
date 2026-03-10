@@ -6,6 +6,7 @@ function JobForm({ addJob }) {
   const [company, setCompany] = useState("")
   const [description, setDescription] = useState("")
   const [category, setCategory] = useState("Frontend")
+  
 
   const handleSubmit = (e) => {
     e.preventDefault()

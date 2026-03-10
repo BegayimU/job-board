@@ -1,4 +1,4 @@
-function JobCard({job}){
+function JobCard({job, deleteJob }){
 
   return(
     <div className="card">
@@ -11,7 +11,7 @@ function JobCard({job}){
 
       <span className="category">{job.category}</span>
 
-      <button>Delete</button>
+      <button onClick={() => deleteJob(job.id)}>Delete</button>
 
     </div>
   )
