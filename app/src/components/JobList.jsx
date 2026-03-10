@@ -4,7 +4,7 @@ import JobCard from "./JobCard"
 function JobList(){
 
   return(
-    <div>
+    <div id="jobs">
 
       <h2>Available Jobs</h2>
 

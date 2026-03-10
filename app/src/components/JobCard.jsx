@@ -9,7 +9,7 @@ function JobCard({job}){
 
       <p>{job.description}</p>
 
-      <span>{job.category}</span>
+      <span className="category">{job.category}</span>
 
       <button>Delete</button>
 

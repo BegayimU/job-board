@@ -1,15 +1,24 @@
 function Header(){
-  return (
-    <header className="header">
-      <h1>💼 Job Board</h1>
 
-      <nav>
-        <a href="#">Find Jobs</a>
-        <a href="#">Post Job</a>
-        <a href="#">Categories</a>
-      </nav>
-    </header>
-  )
+return(
+<header className="header">
+
+<div className="logo">
+💼 Job Board
+</div>
+
+<nav>
+<a href="#jobs">Find Jobs</a>
+<a href="#post-job">Post Job</a>
+<a href="#">Categories</a>
+<a href="#">Contacts</a>
+</nav>
+
+<input placeholder="Search jobs..."/>
+
+</header>
+)
+
 }
 
 export default Header

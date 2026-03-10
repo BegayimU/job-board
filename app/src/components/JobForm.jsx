@@ -1,7 +1,7 @@
 function JobForm(){
 
   return(
-    <div className="card">
+    <div id="post-job" className="card">
 
       <h2>Create New Job</h2>
 
