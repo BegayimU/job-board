@@ -1,15 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Header from "./components/Header"
+import JobForm from "./components/JobForm"
+import JobFilter from "./components/JobFilter"
+import JobList from "./components/JobList"
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-     
-    </>
+    <div>
+
+      <Header />
+
+      <div className="container">
+
+        <div className="grid">
+
+          <JobForm />
+
+          <div>
+            <JobFilter />
+            <JobList />
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
   )
 }
 
