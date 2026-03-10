@@ -1,24 +1,68 @@
-function JobForm(){
+import { useState } from "react"
 
-  return(
+function JobForm({ addJob }) {
+
+  const [title, setTitle] = useState("")
+  const [company, setCompany] = useState("")
+  const [description, setDescription] = useState("")
+  const [category, setCategory] = useState("Frontend")
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    const newJob = {
+      id: Date.now(),
+      title,
+      company,
+      description,
+      category
+    }
+
+    addJob(newJob)
+
+    setTitle("")
+    setCompany("")
+    setDescription("")
+  }
+
+  return (
     <div id="post-job" className="card">
 
       <h2>Create New Job</h2>
 
-      <input placeholder="Job title"/>
+      <form onSubmit={handleSubmit}>
 
-      <input placeholder="Company"/>
+        <input
+          placeholder="Job title"
+          value={title}
+          onChange={(e)=>setTitle(e.target.value)}
+        />
 
-      <textarea placeholder="Description"></textarea>
+        <input
+          placeholder="Company"
+          value={company}
+          onChange={(e)=>setCompany(e.target.value)}
+        />
 
-      <select>
-        <option>Frontend</option>
-        <option>Backend</option>
-        <option>Design</option>
-        <option>Marketing</option>
-      </select>
+        <textarea
+          placeholder="Description"
+          value={description}
+          onChange={(e)=>setDescription(e.target.value)}
+        />
 
-      <button>Add Job</button>
+        <select
+          value={category}
+          onChange={(e)=>setCategory(e.target.value)}
+        >
+          <option>Frontend</option>
+          <option>Backend</option>
+          <option>Design</option>
+          <option>Marketing</option>
+        </select>
+
+        <button type="submit">Add Job</button>
+
+      </form>
 
     </div>
   )

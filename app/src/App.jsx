@@ -1,9 +1,14 @@
+import { useState } from "react"
 import Header from "./components/Header"
 import JobForm from "./components/JobForm"
 import JobFilter from "./components/JobFilter"
 import JobList from "./components/JobList"
 
 function App() {
+  const [jobs, setJobs] = useState([])
+  const addJob = (newJob) => {
+  setJobs([...jobs, newJob])
+}
 
   return (
     <div>
@@ -14,11 +19,11 @@ function App() {
 
         <div className="grid">
 
-          <JobForm />
+          <JobForm addJob={addJob} />
 
           <div>
             <JobFilter />
-            <JobList />
+            <JobList jobs={jobs} />
           </div>
 
         </div>
