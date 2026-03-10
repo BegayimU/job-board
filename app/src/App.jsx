@@ -6,6 +6,7 @@ import JobList from "./components/JobList";
 import { collection, getDocs, addDoc, deleteDoc, doc } from "firebase/firestore";
 import { db } from "./firebase";
 import JobCard from "./components/JobCard";
+import Footer from "./components/Footer";
 
  function App() {
   const [jobs, setJobs] = useState([]);
@@ -43,7 +44,7 @@ import JobCard from "./components/JobCard";
 
   return (
     <div>
-      <Header />
+      <Header search={search} setSearch={setSearch} />
       
 
       <div className="container">
@@ -52,14 +53,18 @@ import JobCard from "./components/JobCard";
           <JobForm addJob={addJob} />
 
           <div>
-            <JobFilter search={search} setSearch={setSearch} />
+            <JobFilter 
+            search={search} 
+            setSearch={setSearch} 
+            categoryFilter={categoryFilter} 
+            setCategoryFilter={setCategoryFilter} 
+            />
 
             <JobList jobs={filteredJobs} deleteJob={deleteJob} />
-            
           </div>
-          
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
